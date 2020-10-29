@@ -34,6 +34,8 @@ $factor should be chosen from (roe, mv, pe, proyoy), $stra from (simple, softmax
 run `python news4company.py` to get the related the recognized entities from the news. Need to change
 the file path in the `news4company.py`.
 
+Should have finacial news in the `chengdu80/dataset/2012_financial_news/2012-01-01/` directory.
+
 ## Notice
 Due to limited time, we have some ideas that are not achieved so far. We believe
 they can work and that would be our work focus in the future.
