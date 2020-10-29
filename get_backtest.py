@@ -4,6 +4,8 @@ from pandas_datareader import get_data_yahoo
 import datetime
 from zigzag import *
 import os
+import argparse
+import sys
 
 bad_stock = ['RDC', 'APC', 'AVP', 'BF/B', 'RTN','SCG'] # remove stocks that have little financial information
 
@@ -180,13 +182,20 @@ if __name__ == '__main__':
     spfi['Ticker'] = spfi['Ticker'].apply(get_simple_ticker, args=('.'))
     spfi = spfi.set_index('Ticker')
 
+    parser = argparse.ArgumentParser(prog='abaci')
+    parser.add_argument('--factors',nargs='+', help="choose factor(s) used. options: mv/roe/pe/proyoy", required=True, default='roe')
+    parser.add_argument('--stra', help="choose the strategy for weighting. two options: softmax/simple", required=True, default='simple')
+
+    options = sys.argv[1:]
+    pargs = parser.parse_args(options)
+    factor = pargs.factors
+    stra = pargs.stra
+
     # run the result
     port_price_list = []
     sp500_price_list = []
     all_company_list = []
     year_len = []
-    factor = ['mv','roe']
-    stra = 'simple'
     if type(factor) == list:
         factor_name = '_'.join(factor)
     else:

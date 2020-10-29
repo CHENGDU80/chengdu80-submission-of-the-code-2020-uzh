@@ -27,7 +27,8 @@ strategy with buy and hold S&P in terms of `Return`, `Votality`, `Max Drawdown` 
 run `pip install -r requirements.txt` to install the required packages.
 
 #### Get Backtest result
-run `get_backtest.py` to get the related `.npy` file in the `\result` directory.
+run `python -m get_backtest.py --factors $factor1 $factor2 --stra $stra` to get the related `.npy` file in the `\result` directory.
+$factor should be chosen from (roe, mv, pe, proyoy), $stra from (simple, softmax).
 
 #### Get News mapping
 run `news4company.py` to get the related the recognized entities from the news.
