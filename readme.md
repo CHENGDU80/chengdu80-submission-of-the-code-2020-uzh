@@ -31,7 +31,8 @@ run `python -m get_backtest.py --factors $factor1 $factor2 --stra $stra` to get 
 $factor should be chosen from (roe, mv, pe, proyoy), $stra from (simple, softmax).
 
 #### Get News mapping
-run `news4company.py` to get the related the recognized entities from the news.
+run `python news4company.py` to get the related the recognized entities from the news. Need to change
+the file path in the `news4company.py`.
 
 ## Notice
 Due to limited time, we have some ideas that are not achieved so far. We believe
